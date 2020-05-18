@@ -1,20 +1,61 @@
-# UI Lab 2
-![](terminal-icon.png)
-![](gui-icon.png)
+# Bank ClI
 
-Це одна з робіт, які доповнюють основний цикл лабораторних робіт #1-8 (проект **Banking**, [Netbeans](https://netbeans.org/)) з ООП.  Основна мета цих додаткових вправ - познайомитись з різними видами інтерфейсів користувача та засобами їх створення. Згадувані 'базові' роботи розміщено в [окремому репозиторії](https://github.com/liketaurus/OOP-JAVA) (якщо будете робити завдання на "4" або "5" раджу переглянути [діаграму класів](https://github.com/liketaurus/OOP-JAVA/blob/master/MyBank.png), аби розуміти які методи є у класів).
+Даний репозиторій містить код **CLI** для роботи з клієнтами банку, в якому виконані **останнє** та всі [додаткові завдання](https://github.com/ppc-ntu-khpi/TUI-Lab2-Starter/blob/master/Lab%202%20-%20CLI/Lab%202%20-%20add.md).
 
-В ході першої роботи вам пропонується виконати **наступне завдання** - [Робота 2: CLI з jline 3](https://github.com/ppc-ntu-khpi/TUI-Lab2-Starter/blob/master/Lab%202%20-%20CLI/Lab%202.md)
-  
-**Додаткове завдання** (для тих хто зробив все і прагне більшого): [дивіться тут](https://github.com/ppc-ntu-khpi/TUI-Lab2-Starter/blob/master/Lab%202%20-%20CLI/Lab%202%20-%20add.md)
+# Приклад роботи з CLI
 
-Всі необхідні бібліотеки містяться у теці [jars](https://github.com/ppc-ntu-khpi/TUI-Lab2-Starter/tree/master/jars). В тому числі - всі необхідні відкомпільовані класи з робіт 1-8 - файл [MyBank.jar](https://github.com/ppc-ntu-khpi/TUI-Lab2-Starter/blob/master/jars/MyBank.jar). Файл даних лежить у теці [data](https://github.com/ppc-ntu-khpi/TUI-Lab2-Starter/tree/master/data).
+```
+bank> help
+help				- Show help
+customer			- Show list of customers
+customer 'index'		- Show customer details
+account 'index' S/C		- Show current balance on customer's account
+deposit 'customer' S/C 'sum'	- Deposit on customer's account
+withdraw 'customer' S/C 'sum'	- Withdaw from customer's account
+save				 - save all changes
+exit				- Exit the app
 
----
-**УВАГА! Не забуваємо здавати завдання через Google Classroom та вказувати посилання на створений для вас репозиторій!**
+bank> customers
 
-Також пам'ятайте, що ніхто не заважає вам редагувати файл README у вашому репозиторії😉.
-А ще - дуже раджу спробувати нову фічу - інтеграцію з IDE REPL.it (хоч з таким завданням вона може й не впоратись, однак, цікаво ж!).
+This is all of your customers:
+
+Last name	First Name	Balance
+---------------------------------------
+Doe		John		$2000.0
+Mulder		Fox		$1000.0
+
+bank> customer 1
+
+This is detailed information about customer #1!
+
+Last name	First Name	Account Type	Balance
+-------------------------------------------------------
+Mulder		Fox		Savings	$1000.0
+
+bank> report
+			CUSTOMERS REPORT
+			================
+
+Customer: Doe, John
+    Checking Account: current balance is 2000.0
+
+Customer: Mulder, Fox
+    Savings Account: current balance is 1000.0
+
+bank> account 1 S
+$1000.0
+
+bank> deposit 1 S 100
+You've just deposit $100 on customer's account, current balance &1100.0
+
+bank> withdraw 1 S 10
+You've just withdraw $10 from customer's account, current balance &1090.0
+
+bank> save
+
+bank> exit
+Exiting application
+```
 
 ![](https://img.shields.io/badge/Made%20with-JAVA-red.svg)
 ![](https://img.shields.io/badge/Made%20with-%20Netbeans-brightgreen.svg)
