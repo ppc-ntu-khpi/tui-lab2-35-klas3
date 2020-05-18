@@ -203,6 +203,7 @@ public class CLIdemo {
         System.out.println("help\t\t\t\t- Show help");
         System.out.println("customer\t\t\t- Show list of customers");
         System.out.println("customer \'index\'\t\t- Show customer details");
+        System.out.println("report\t\t\t\t- Customers report");
         System.out.println("account \'index\' S/C\t\t- Show current balance on customer's account");
         System.out.println("deposit \'customer\' S/C \'sum\'\t- Deposit on customer's account");
         System.out.println("withdraw \'customer\' S/C \'sum\'\t- Withdaw from customer's account");
